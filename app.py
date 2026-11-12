@@ -35,7 +35,6 @@ st.markdown("""
 
 # Header Kafe
 st.title("☕ Kopi Nakula")
-st.markdown("*Tempat Ngopi Santai & Estetik*")
 st.divider()
 
 # Input Data Pelanggan
