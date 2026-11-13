@@ -39,13 +39,13 @@ st.divider()
 
 # Input Data Pelanggan
 nama_pelanggan = st.text_input("👤 Nama Anda:", placeholder="Ketik nama Anda di sini...")
-nomor_meja = st.selectbox("📍 Nomor Meja:", ["Meja 1", "Meja 2", "Meja 3", "Meja 4", "VIP 1"])
+nomor_meja = st.selectbox("📍 Nomor Meja:", ["meja 1", "meja 2", "meja 3", "meja 4", "VIP 1"])
 
 st.divider()
 
 # Daftar Menu dan Harga
 menu_items = {
-    "Nakula Palm Sugar Latte": 25000,
+    "Palm Sugar Latte": 25000,
     "Caramel Macchiato": 32000,
     "Americano Ice": 20000,
     "Croissant Butter": 22000,
@@ -57,7 +57,7 @@ if "cart" not in st.session_state:
     st.session_state.cart = {}
 
 # Menampilkan Daftar Menu
-st.subheader("📋 Daftar Menu")
+st.subheader("📋 Daftar Menu Ada Dibawah Ini")
 for item, harga in menu_items.items():
     with st.container():
         st.markdown(f"**{item}**")
@@ -97,12 +97,12 @@ if st.session_state.cart:
     with col_kirim:
         if st.button("✅ Kirim Pesanan"):
             if not nama_pelanggan:
-                st.error("Isi Nama Anda dulu ya!")
+                st.error("Isi Nama Anda terlebih dahulu ya!")
             else:
                 st.success(f"Pesanan atas nama **{nama_pelanggan}** ({nomor_meja}) berhasil dikirim ke kasir! 🎉")
                 st.session_state.cart = {}
     with col_hapus:
-        if st.button("🗑️ Kosongkan"):
+        if st.button("🗑️ Kosongkan Keranjang"):
             st.session_state.cart = {}
             st.rerun()
 else:
