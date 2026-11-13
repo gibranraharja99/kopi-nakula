@@ -57,7 +57,7 @@ if "cart" not in st.session_state:
     st.session_state.cart = {}
 
 # Menampilkan Daftar Menu
-st.subheader("📋 Daftar Menu Ada Dibawah Ini")
+st.subheader("📋 Daftar Menu")
 for item, harga in menu_items.items():
     with st.container():
         st.markdown(f"**{item}**")
